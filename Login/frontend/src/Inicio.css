@@ -1,28 +1,6 @@
-#boton1{
-background-color: lightblue;
-border-radius: 10px;
-border: none;
-padding: 10px;
-}
 
-#form1{
-   display: grid;
-    grid-template-areas: 
-   "input"
-   "input"
-   "button";
-   grid-template-columns: 200px;
-   justify-content: center;
-    padding: 100px;
-   background-color: #78909b;
-   margin: 200px;
-   border-radius: 20px;
-}
 
-input{
-    padding: 10px;
-    margin-bottom: 10px;
-}
+
 
 /*----------------------------------Inicio--------------------------------------*/
 

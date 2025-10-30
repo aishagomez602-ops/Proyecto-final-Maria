@@ -1,6 +1,7 @@
 
 import "./Inicio.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import "./Login.css";
 
 
 function Inicio () {

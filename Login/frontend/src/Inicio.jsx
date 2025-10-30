@@ -1,9 +1,43 @@
-import React from "react";
+
 import "./Inicio.css";
 import { useState } from "react";
 
 
 function Inicio () {
+
+    const [turnos, setTurnos] = useState(() => {
+    const guardados = localStorage.getItem("turnos")
+    return guardados ? JSON.parse(guardados) : []
+  })
+  const [nombre, setNombre] = useState("")
+  const [servicio, setServicio] = useState("")
+  const [fecha, setFecha] = useState("")
+  const [hora, setHora] = useState("")
+  const [mensaje, setMensaje] = useState("")
+
+  useEffect(() => {
+    localStorage.setItem("turnos", JSON.stringify(turnos))
+  }, [turnos])
+
+  const reservarTurno = (e) => {
+    e.preventDefault()
+    if (!nombre || !servicio || !fecha || !hora) {
+      setMensaje("⚠️ Completá todos los datos.")
+      return
+    }
+    const nuevoTurno = { nombre, servicio, fecha, hora }
+    setTurnos([...turnos, nuevoTurno])
+    setMensaje("✅ Turno reservado correctamente.")
+    setNombre("")
+    setServicio("")
+    setFecha("")
+    setHora("")
+  }
+
+  const eliminarTurno = (i) => {
+    const nuevos = turnos.filter((_, index) => index !== i)
+    setTurnos(nuevos)
+  }
   return (
     <div>
       <header>

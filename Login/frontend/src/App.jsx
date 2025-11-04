@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import Registro from "./Registro"; 
@@ -13,6 +12,7 @@ export default function App() {
         <Route path="/" element={<Login />} />
         <Route path="/registro" element={<Registro />} /> 
         <Route path="/Inicio" element={<Inicio />} /> 
+       
       </Routes>
     </BrowserRouter>
   );

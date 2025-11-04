@@ -1,39 +1,87 @@
-.form{
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-
-input{
-      width: 300px;                 /* ocupan todo el ancho */
-      padding: 10px;               /* espacio interno */
-      margin: 10px 0;              /* espacio entre campos */
-      border-radius: 5px;          /* bordes redondeados */
-      border: 1px solid #ccc;      /* borde gris claro */
-      box-sizing: border-box;      /* que respete el ancho total */
-      font-family: Arial, Helvetica, sans-serif;
-}
-
-.caja {
-    height: 300px;
-  background-color: rgb(15, 9, 9);
-  border-radius: 15px;
-  box-shadow: 5px 5px 10px rgba(2, 2, 2, 0.7);
-  padding: 20px;
-  width: 400px;
+/* Fondo general */
+.contenedor {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  text-align: left;
-  margin-top: 200px;
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  font-family: 'Open Sans', sans-serif;
 }
 
-.contenedor{
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    display: flex;
+/* Caja del formulario */
+.caja {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+}
+
+/* Formulario */
+.form label {
+  color: #1565c0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form input:focus {
+  border-color: #1565c0;
+  box-shadow: 0 0 6px rgba(21, 101, 192, 0.3);
+}
+
+/* Botón principal */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1565c0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0d47a1;
+}
+
+/* Link dentro del botón */
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Texto inferior */
+.texto {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.texto .link {
+  color: #1565c0;
+}
+
+.texto .link:hover {
+  text-decoration: underline;
+}
+
+/* Mensaje de error o información */
+P {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
 }

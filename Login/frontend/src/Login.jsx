@@ -38,11 +38,11 @@ function Login() {
             <input type="password" value={contraseña} onChange={(e) => setContraseña(e.target.value)} />
           </label>
           <br /><br />
-          <button type="submit"><Link to="/inicio">Iniciar</Link></button>
+          <button type="submit"><Link to="/inicio" className="link">Iniciar</Link></button>
           <br />
           {mensaje && <P>{mensaje}</P>}
-          <p>
-            ¿No tienes cuenta? <Link to="/registro">Regístrate aquí</Link>
+          <p className="texto">
+            ¿No tienes cuenta? <Link to="/registro" className="link">Regístrate aquí</Link>
           </p>
         </form>
       </div>

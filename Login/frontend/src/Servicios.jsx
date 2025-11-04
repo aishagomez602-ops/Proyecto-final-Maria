@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import "./Servicios.css";
 import { useState,useEffect } from "react";
 
@@ -40,19 +40,19 @@ function Servicios () {
   }
   return (
     <div>
-        <header className="header">
-    <div className="logo">
-      <img src="imag/logoSF.png" alt="Logo Clinica" />
-    </div>
+       
+         <header className="header">
+        <div className="logo">
+          <img src="imag/logoSF.png" alt="Logo Clínica" />
+          
+        <nav className="navbar">
+          <Link to="/inicio"><button>Inicio</button></Link>
+          <Link to="/servicios"><button>Servicios</button></Link>
+          <Link to="/turnos"><button>Turnos</button></Link>
+        </nav>
+        </div>
 
-    <nav className="navbar">
-      <ul>
-        <li><a href="Inicio.jsx">Inicio</a></li>
-        <li><a href="Servicios.jsx">Servicios</a></li>
-        <li><a href="Historia.jsx">Historia</a></li>
-      </ul>
-    </nav>
-  </header>
+      </header>
 
       {/* Primera fila */}
       <section className="areas1">

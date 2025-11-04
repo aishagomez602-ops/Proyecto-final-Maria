@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import "./Inicio.css";
+import "./Turnos.css";
 
-export default function Inicio() {
+export default function Turnos() {
   return (
-    <div className="inicio-container">
-      <header className="header">
+    <div className="turnos-page">
+        
+         <header className="header">
         <div className="logo">
           <img src="imag/logoSF.png" alt="Logo Clínica" />
           
@@ -16,11 +17,42 @@ export default function Inicio() {
         </div>
 
       </header>
-      
-      <div className="main">
-      <h1>Bienvenido</h1>
-      <img src="imag/clinica.png" alt="Sanatorio del Norte" />
-      </div>
+        <main className="turnos-main">
+        <h1>Gestión de Turnos</h1>
+        <p>Seleccioná la especialidad y el horario que prefieras.</p>
+
+        <div className="turnos-container">
+          <form className="turnos-form">
+            <label>
+              Nombre y apellido:
+              <input type="text" placeholder="Ej: Juan Pérez" />
+            </label>
+
+            <label>
+              Especialidad:
+              <select>
+                <option>Medicina General</option>
+                <option>Pediatría</option>
+                <option>Odontología</option>
+                <option>Dermatología</option>
+                <option>Oftalmología</option>
+              </select>
+            </label>
+
+            <label>
+              Fecha:
+              <input type="date" />
+            </label>
+
+            <label>
+              Hora:
+              <input type="time" />
+            </label>
+
+            <button type="submit">Reservar turno</button>
+          </form>
+        </div>
+      </main>
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-section">
@@ -63,5 +95,3 @@ export default function Inicio() {
     </div>
   );
 }
-
-

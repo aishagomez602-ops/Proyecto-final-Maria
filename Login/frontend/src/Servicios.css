@@ -127,36 +127,60 @@ img{
   width: 40px;
 }
 ---------------------------------NAV------------------------------------------------------------------
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff); /* degradado suave */
+  font-family: "Poppins", sans-serif;
+}
+
 .header {
-  display: flex;
-  justify-content: space-between; /* Logo a la izquierda, nav a la derecha */
+  background-color: #e3f2fd; /* azulito suave */
+  display:flex;
+  justify-content:space-between;
   align-items: center;
-  background-color: #b3d9ff; /* Azul clarito */
-  padding: 15px 50px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 15px 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 800px;
+
+
 }
 
 .logo img {
-  height: 70px;
+
+  width: 300px;
 }
 
-.navbar ul {
+.logo h2 {
+  color: #004080;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.navbar {
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 35px;
+  gap: 20px;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: #004080; /* Azul más oscuro para contraste */
-  font-weight: 600;
-  font-size: 18px;
-  transition: color 0.3s ease;
+.navbar button {
+  background-color: rgb(84, 160, 202);
+  border: 2px solid #70a2d8;
+  color: #004080;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.navbar a:hover {
-  color: #007bff; /* Azul más intenso al pasar el mouse */
+.navbar button:hover {
+  background-color: #5394d9;
+  color: white;
+  transform: scale(1.05);
 }
-

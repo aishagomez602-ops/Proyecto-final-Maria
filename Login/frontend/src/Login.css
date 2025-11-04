@@ -1,10 +1,10 @@
-/* Fondo general */
+/* Fondo suave tipo hospital */
 .contenedor {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  background: linear-gradient(135deg, #d4f1f9, #a7e0eb);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -12,38 +12,45 @@
 .caja {
   background: #ffffff;
   padding: 40px 50px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 370px;
+  transition: 0.3s;
 }
 
-/* Formulario */
+.caja:hover {
+  transform: translateY(-2px);
+}
+
+/* Etiquetas */
 .form label {
   color: #1565c0;
   font-weight: 600;
   font-size: 15px;
 }
 
+/* Campos de texto */
 .form input {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
+  margin-bottom: 20px;
   border: 1px solid #90caf9;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .form input:focus {
   border-color: #1565c0;
-  box-shadow: 0 0 6px rgba(21, 101, 192, 0.3);
+  box-shadow: 0 0 8px rgba(21, 101, 192, 0.3);
 }
 
-/* Botón principal */
+/* Botón */
 button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #1565c0;
   border: none;
   border-radius: 8px;
@@ -55,8 +62,8 @@ button:hover {
   background-color: #0d47a1;
 }
 
-/* Link dentro del botón */
-.link {
+/* Texto dentro del botón */
+button .link {
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -72,16 +79,18 @@ button:hover {
 
 .texto .link {
   color: #1565c0;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .texto .link:hover {
   text-decoration: underline;
 }
 
-/* Mensaje de error o información */
+/* Mensaje de error o validación */
 P {
-  color: red;
-  font-size: 14px;
+  color: #d32f2f;
   text-align: center;
+  font-size: 14px;
   margin-top: 10px;
 }

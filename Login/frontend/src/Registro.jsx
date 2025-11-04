@@ -18,7 +18,7 @@ export default function Registro() {
             <input type="password" />
           </label>
           <br /><br />
-          <button type="submit"><Link to = "/inicio">Registrarse</Link></button>
+         <button type="submit"><Link to="/inicio" className="link">Registrarse</Link></button>
           <br />
     
         </form>

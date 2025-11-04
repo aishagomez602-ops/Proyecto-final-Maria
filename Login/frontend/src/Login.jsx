@@ -25,26 +25,40 @@ function Login() {
     
     <div className="contenedor">
       <div className="caja">
-        <form className="form" onSubmit={handleSubmit}>
-          <label htmlFor="">
-            Usuario
-            <br />
-            <input type="text" value={usuario} onChange={(e) => setUsuarios(e.target.value)} />
-          </label>
-          <br /> <br />
-          <label htmlFor="">
-            Contraseña
-            <br />
-            <input type="password" value={contraseña} onChange={(e) => setContraseña(e.target.value)} />
-          </label>
-          <br /><br />
-          <button type="submit"><Link to="/inicio" className="link">Iniciar</Link></button>
-          <br />
-          {mensaje && <P>{mensaje}</P>}
-          <p className="texto">
-            ¿No tienes cuenta? <Link to="/registro" className="link">Regístrate aquí</Link>
-          </p>
-        </form>
+       <form className="form" onSubmit={handleSubmit}>
+  <label>
+    Usuario
+    <br />
+    <input
+      type="text"
+      value={usuario}
+      onChange={(e) => setUsuarios(e.target.value)}
+      required
+    />
+  </label>
+  <br /> <br />
+
+  <label>
+    Contraseña
+    <br />
+    <input
+      type="password"
+      value={contraseña}
+      onChange={(e) => setContraseña(e.target.value)}
+      required
+    />
+  </label>
+  <br /><br />
+
+  <button type="submit"><Link to="/inicio" className="link">Iniciar</Link></button>
+
+  {mensaje && <p>{mensaje}</p>}
+
+  <p className="texto">
+    ¿No tienes cuenta? <Link to="/registro" className="link">Regístrate aquí</Link>
+  </p>
+</form>
+
       </div>
     </div>
   

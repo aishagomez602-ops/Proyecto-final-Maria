@@ -1,123 +1,38 @@
 
 import "./Inicio.css";
-import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 
 function Inicio () {
-
-    const [turnos, setTurnos] = useState(() => {
-    const guardados = localStorage.getItem("turnos")
-    return guardados ? JSON.parse(guardados) : []
-  })
-  const [nombre, setNombre] = useState("")
-  const [servicio, setServicio] = useState("")
-  const [fecha, setFecha] = useState("")
-  const [hora, setHora] = useState("")
-  const [mensaje, setMensaje] = useState("")
-
-  useEffect(() => {
-    localStorage.setItem("turnos", JSON.stringify(turnos))
-  }, [turnos])
-
-  const reservarTurno = (e) => {
-    e.preventDefault()
-    if (!nombre || !servicio || !fecha || !hora) {
-      setMensaje("⚠️ Completá todos los datos.")
-      return
-    }
-    const nuevoTurno = { nombre, servicio, fecha, hora }
-    setTurnos([...turnos, nuevoTurno])
-    setMensaje("✅ Turno reservado correctamente.")
-    setNombre("")
-    setServicio("")
-    setFecha("")
-    setHora("")
-  }
-
-  const eliminarTurno = (i) => {
-    const nuevos = turnos.filter((_, index) => index !== i)
-    setTurnos(nuevos)
-  }
-  return (
+  return(
     <div>
-      <header>
-        <nav></nav>
+           
+         <header className="header">
+        <div className="logo">
+          <img src="imag/logoSF.png" alt="Logo Clínica" />
+          
+        <nav className="navbar">
+          <Link to="/inicio"><button>Inicio</button></Link>
+          <Link to="/servicios"><button>Servicios</button></Link>
+          <Link to="/turnos"><button>Turnos</button></Link>
+        </nav>
+        </div>
+
       </header>
-
-      {/* Primera fila */}
-      <section className="areas1">
-        <figure className="areas">
-          <button>
-            Medicina general <br /> 
-        
-            <img src="imag/MedicinaG.jpg" alt="Medicina general" /> <br />
-            
-          </button>
-        </figure>
-
-        <figure className="areas">
-          <button>
-            Médico cirujano <br />
-            <img src="imag/medicoc.jpg" alt="Médico cirujano" className="imag" />
-          </button>
-        </figure>
-
-        <figure className="areas">
-          <button>
-            Nutrición <br />
-            <img src="imag/nutricion.jpg" alt="Nutrición" className="imag" />
-          </button>
-        </figure>
-      </section>
-
-      {/* Segunda fila */}
-      <section className="areas1">
-        <figure className="areas">
-          <button>
-            Odontología <br />
-            <img src="imag/odontologia.jpg" alt="Odontología" className="imag" />
-          </button>
-        </figure>
-
-        <figure className="areas">
-          <button>
-            Oftalmología <br />
-            <img src="imag/oftangologia.jpg" alt="Oftalmología" className="imag" />
-          </button>
-        </figure>
-
-        <figure className="areas">
-          <button>
-            Pediatría <br />
-            <img src="imag/pediatria.jpg" alt="Pediatría" className="imag" />
-          </button>
-        </figure>
-      </section>
-
-      {/* Tercera fila */}
-      <section className="areas1">
-        <figure className="areas">
-          <button>
-            Dermatología <br />
-            <img src="imag/Dermatología.jpg" alt="Dermatología" className="imag" />
-          </button>
-        </figure>
-
-        <figure className="areas">
-          <button>
-            Gastrología <br />
-            <img src="imag/Gastrología.jpg" alt="Gastrología" className="imag" />
-          </button>
-      
-        </figure>
-
-        <figure className="areas">
-          <button>
-            Neumología <br />
-            <img src="imag/Neumología.jpg" alt="Neumología" className="imag" />
-          </button>
-        </figure>
-      </section>
+       {/* Contenido principal */}
+      <main className="contenido">
+        <h1 className="titulo-bienvenida">Bienvenido </h1>
+        <img 
+          src="imag/clinica.png" 
+          alt="Sanatorio del Norte" 
+          className="imagen-sanatorio" 
+        />
+        <p className="descripcion">
+          Brindamos atención médica de excelencia, tecnología de vanguardia y un equipo
+          profesional comprometido con tu bienestar.
+        </p>
+      </main>
 
       {/* Footer */}
       <footer className="footer">

@@ -48,8 +48,10 @@ function Inicio () {
       <section className="areas1">
         <figure className="areas">
           <button>
-            Medicina general <br />
-            <img src="imag/MedicinaG.jpg" alt="Medicina general" />
+            Medicina general <br /> 
+        
+            <img src="imag/MedicinaG.jpg" alt="Medicina general" /> <br />
+            
           </button>
         </figure>
 
@@ -106,6 +108,7 @@ function Inicio () {
             Gastrología <br />
             <img src="imag/Gastrología.jpg" alt="Gastrología" className="imag" />
           </button>
+      
         </figure>
 
         <figure className="areas">
@@ -143,7 +146,7 @@ function Inicio () {
                 <img src="imag/facebook.png" alt="Facebook" />
               </i>
               <i className="fab fa-whatsapp">
-                <img src="imag/whatsapp.png" alt="WhatsApp" />
+                <img src="imag/image.png" alt="WhatsApp" />
               </i>
               <i className="fab fa-telegram">
                 <img src="imag/telegram.png" alt="Telegram" />

@@ -1,7 +1,55 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Turnos.css";
 
 export default function Turnos() {
+
+    // Estado para los turnos guardados
+  const [turnos, setTurnos] = useState(() => {
+    const guardados = localStorage.getItem("turnos");
+    return guardados ? JSON.parse(guardados) : [];
+  });
+
+  // Estados para el formulario
+  const [nombre, setNombre] = useState("");
+  const [especialidad, setEspecialidad] = useState("Medicina General");
+  const [fecha, setFecha] = useState("");
+  const [hora, setHora] = useState("");
+
+  // Guardar los turnos en localStorage cada vez que cambian
+  useEffect(() => {
+    localStorage.setItem("turnos", JSON.stringify(turnos));
+  }, [turnos]);
+
+  // Función para enviar el formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!nombre || !fecha || !hora) {
+      alert("Por favor, completá todos los campos.");
+      return;
+    }
+
+    const nuevoTurno = {
+      id: Date.now(),
+      nombre,
+      especialidad,
+      fecha,
+      hora,
+    };
+
+    setTurnos([...turnos, nuevoTurno]);
+    setNombre("");
+    setEspecialidad("Medicina General");
+    setFecha("");
+    setHora("");
+  };
+
+  // Función para eliminar un turno
+  const eliminarTurno = (id) => {
+    const nuevos = turnos.filter((t) => t.id !== id);
+    setTurnos(nuevos);
+  };
   return (
     <div className="turnos-page">
         
@@ -17,42 +65,81 @@ export default function Turnos() {
         </div>
 
       </header>
-        <main className="turnos-main">
-        <h1>Gestión de Turnos</h1>
-        <p>Seleccioná la especialidad y el horario que prefieras.</p>
+    
+    <main className="turnos-main">
+      <h1>Gestión de Turnos</h1>
+      <p>Seleccioná la especialidad y el horario que prefieras.</p>
 
-        <div className="turnos-container">
-          <form className="turnos-form">
-            <label>
-              Nombre y apellido:
-              <input type="text" placeholder="Ej: Juan Pérez" />
-            </label>
+      <div className="turnos-container">
+        <form className="turnos-form" onSubmit={handleSubmit}>
+          <label>
+            Nombre y apellido:
+            <input
+              type="text"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              placeholder="Ej: Juan Pérez"
+            />
+          </label>
 
-            <label>
-              Especialidad:
-              <select>
-                <option>Medicina General</option>
-                <option>Pediatría</option>
-                <option>Odontología</option>
-                <option>Dermatología</option>
-                <option>Oftalmología</option>
-              </select>
-            </label>
+          <label>
+            Especialidad:
+            <select
+              value={especialidad}
+              onChange={(e) => setEspecialidad(e.target.value)}
+            >
+              <option>Medicina General</option>
+              <option>Pediatría</option>
+              <option>Odontología</option>
+              <option>Dermatología</option>
+              <option>Oftalmología</option>
+              <option>Gastroenterología</option>
+              <option>Neumología</option>
+              <option>Médico cirujano</option>
+              <option>Nutrición</option>
 
-            <label>
-              Fecha:
-              <input type="date" />
-            </label>
+            </select>
+          </label>
 
-            <label>
-              Hora:
-              <input type="time" />
-            </label>
+          <label>
+            Fecha:
+            <input
+              type="date"
+              value={fecha}
+              onChange={(e) => setFecha(e.target.value)}
+            />
+          </label>
 
-            <button type="submit">Reservar turno</button>
-          </form>
-        </div>
-      </main>
+          <label>
+            Hora:
+            <input
+              type="time"
+              value={hora}
+              onChange={(e) => setHora(e.target.value)}
+            />
+          </label>
+
+          <button type="submit">Reservar turno</button>
+        </form>
+      </div>
+
+      <section className="turnos-lista">
+        <h2>Turnos agendados</h2>
+        {turnos.length === 0 ? (
+          <p>No hay turnos registrados aún.</p>
+        ) : (
+          <ul>
+            {turnos.map((t) => (
+              <li key={t.id}>
+                <strong>{t.nombre}</strong> — {t.especialidad} <br />
+                📅 {t.fecha} ⏰ {t.hora}
+                <button onClick={() => eliminarTurno(t.id)}>🗑️ Eliminar</button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </main>
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-section">

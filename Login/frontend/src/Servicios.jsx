@@ -113,7 +113,7 @@ function Servicios () {
 
         <figure className="areas">
           <button>
-            Gastrología <br />
+            Gastroenterología <br />
             <img src="imag/Gastrología.jpg" alt="Gastrología" className="imag" />
           </button>
         </figure>

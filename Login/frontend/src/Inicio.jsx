@@ -32,6 +32,8 @@ function Inicio () {
           Brindamos atención médica de excelencia, tecnología de vanguardia y un equipo
           profesional comprometido con tu bienestar.
         </p>
+        <br />
+        <br />
       </main>
 
       {/* Footer */}

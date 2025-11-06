@@ -77,7 +77,7 @@ function Inicio() {
                 <img src="imag/facebook.png" alt="Facebook" />
               </i>
               <i className="fab fa-whatsapp">
-                <img src="imag/image.png" alt="WhatsApp" />
+                <img src="imag/whatsapp.png" alt="WhatsApp" />
               </i>
               <i className="fab fa-telegram">
                 <img src="imag/telegram.png" alt="Telegram" />

@@ -1,32 +1,46 @@
-
 import "./Inicio.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
+function Inicio() {
+  const [usuario, setUsuario] = useState("");
 
+  useEffect(() => {
+    const nombreGuardado = localStorage.getItem("usuarioLogueado");
+    if (nombreGuardado) {
+      setUsuario(nombreGuardado);
+    }
+  }, []);
 
-function Inicio () {
-  return(
+  return (
     <div>
-           
-         <header className="header">
+      <header className="header">
         <div className="logo">
           <img src="imag/logoSF.png" alt="Logo Clínica" />
-          
-        <nav className="navbar">
-          <Link to="/inicio"><button>Inicio</button></Link>
-          <Link to="/servicios"><button>Servicios</button></Link>
-          <Link to="/turnos"><button>Turnos</button></Link>
-        </nav>
-        </div>
 
+          <nav className="navbar">
+            <Link to="/inicio">
+              <button>Inicio</button>
+            </Link>
+            <Link to="/servicios">
+              <button>Servicios</button>
+            </Link>
+            <Link to="/turnos">
+              <button>Turnos</button>
+            </Link>
+          </nav>
+        </div>
       </header>
-       {/* Contenido principal */}
+
+      {/* Contenido principal */}
       <main className="contenido">
-        <h1 className="titulo-bienvenida">Bienvenido </h1>
-        <img 
-          src="imag/clinica.png" 
-          alt="Sanatorio del Norte" 
-          className="imagen-sanatorio" 
+        <h1 className="titulo-bienvenida">
+          Bienvenido {usuario && <span>{usuario}</span>}
+        </h1>
+        <img
+          src="imag/clinica.png"
+          alt="Sanatorio del Norte"
+          className="imagen-sanatorio"
         />
         <p className="descripcion">
           Brindamos atención médica de excelencia, tecnología de vanguardia y un equipo
@@ -78,6 +92,6 @@ function Inicio () {
       </footer>
     </div>
   );
-};
+}
 
-export default  Inicio;
+export default Inicio;

@@ -1,25 +1,30 @@
 import "./Login.css";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
 
-function Login() {
+export default function Login() {
+
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [mensaje, setMensaje] = useState("");
+  
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const enviarLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/login", {
-        nombreUsuario: usuario,
+      const respuesta = await axios.post("http://localhost:3000/login", {
+        usuario: usuario,
         contraseña: contraseña,
       });
 
-      if (response.data.mensaje === "login exitoso") {
-        localStorage.setItem("usuario", JSON.stringify(response.data.usuario));
+      if (respuesta.data.mensaje === "login exitoso") {
+
+        // Guardamos el usuario en el localStorage
+        localStorage.setItem("usuario", JSON.stringify(respuesta.data.usuario));
+
         navigate("/inicio");
       } else {
         setMensaje("Usuario o contraseña incorrectos");
@@ -33,7 +38,8 @@ function Login() {
   return (
     <div className="contenedor">
       <div className="caja">
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={enviarLogin}>
+          
           <label>
             Usuario
             <br />
@@ -63,9 +69,9 @@ function Login() {
           {mensaje && <p>{mensaje}</p>}
 
           <p className="texto">
-            ¿No tienes cuenta?{" "}
+            ¿No tenes una cuenta?{" "}
             <Link to="/registro" className="link">
-              Regístrate aquí
+              Registrate aca
             </Link>
           </p>
         </form>
@@ -73,6 +79,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;
-

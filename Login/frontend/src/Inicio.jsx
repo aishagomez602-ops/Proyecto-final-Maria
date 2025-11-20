@@ -28,6 +28,9 @@ function Inicio() {
             <Link to="/turnos">
               <button>Turnos</button>
             </Link>
+            <Link to="/Cerrar Sesion">
+              <button>Cerrar Sesion</button>
+            </Link>
           </nav>
         </div>
       </header>

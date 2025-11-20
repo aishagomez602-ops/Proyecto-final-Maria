@@ -192,3 +192,101 @@ p{
 img{
   width: 40px;
 }
+
+/* ------------------------ PC / ESCRITORIOS GRANDES ------------------------ */
+@media (min-width: 1025px) {
+  .logo {
+    gap: 800px;
+  }
+
+  .navbar button {
+    padding: 20px 30px;
+    font-size: 1rem;
+  }
+
+  .imagen-sanatorio {
+    width: 80%;
+    margin-left: 300px;
+  }
+}
+
+/* ------------------------ TABLET ------------------------ */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logo {
+    gap: 200px;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+  .navbar button {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+
+  .imagen-sanatorio {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .titulo-bienvenida {
+    font-size: 2rem;
+  }
+}
+
+/* ------------------------ CELULAR ------------------------ */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .logo {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar button {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .contenido {
+    padding: 20px;
+  }
+
+  .imagen-sanatorio {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .titulo-bienvenida {
+    font-size: 1.8rem;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

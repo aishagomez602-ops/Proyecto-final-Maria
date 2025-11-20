@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require("express-session");
 const mysql = require('mysql2');
 const cors = require('cors');
 const app = express();
@@ -21,9 +22,9 @@ connection.connect((err) => {
   console.log("Conectado a MySQL");
 });
 
-/* cooki
+// cooki
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "http://localhost:5173",
   credentials: true
 }));
 
@@ -32,9 +33,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: { secure: false }
-}));*/
+}));
 
-// RUTA REGISTRO
+//  REGISTRO
 app.post("/registro", (req, res) => {
   const { usuario, contraseña } = req.body;
 
@@ -69,11 +70,6 @@ app.post("/login", (req, res) => {
   });
 });
 
-// Servidor
-app.listen(3000, () => {
-  console.log(" Servidor Express en http://localhost:3000");
-});
-
 
 // CERRAR SESIÓN 
 app.post("/logout", (req, res) => {
@@ -85,5 +81,12 @@ app.post("/logout", (req, res) => {
     res.json({ success: true, message: "Sesión cerrada correctamente" });
   });
 });
-app.listen(3000, () => console.log("Servidor corriendo en puerto 3000"));
+app.listen(3001, () => console.log("Servidor corriendo en puerto 3001"));
+
+
+
+// Servidor
+app.listen(3001, () => {
+  console.log(" Servidor Express en http://localhost:3001");
+});
 

@@ -15,7 +15,7 @@ export default function Registro() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/registro", {
+      const response = await axios.post("http://localhost:3001/registro", {
         usuario: usuario,
         contraseña: contraseña
       });

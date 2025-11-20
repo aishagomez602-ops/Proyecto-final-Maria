@@ -8,14 +8,14 @@ export default function Login() {
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [mensaje, setMensaje] = useState("");
-  
+
   const navigate = useNavigate();
 
   const enviarLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const respuesta = await axios.post("http://localhost:3000/login", {
+      const respuesta = await axios.post("http://localhost:3001/login", {
         usuario: usuario,
         contraseña: contraseña,
       });
@@ -30,8 +30,11 @@ export default function Login() {
         setMensaje("Usuario o contraseña incorrectos");
       }
     } catch (error) {
-      console.error(error);
-      setMensaje("Error al conectar con el servidor");
+      if (error.response) {
+        setMensaje(error.response.data.mensaje);
+      } else {
+        setMensaje("Error al conectar con el servidor");
+      }
     }
   };
 
@@ -39,7 +42,7 @@ export default function Login() {
     <div className="contenedor">
       <div className="caja">
         <form className="form" onSubmit={enviarLogin}>
-          
+
           <label>
             Usuario
             <br />

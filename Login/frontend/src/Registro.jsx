@@ -21,7 +21,7 @@ export default function Registro() {
       });
 
       if (response.data.mensaje === "usuario creado") {
-        navigate("/Turnos");  // redirige cuando se registra bien
+        navigate("/login");  // redirige cuando se registra bien
       } else {
         setMensaje("No se pudo crear el usuario");
       }

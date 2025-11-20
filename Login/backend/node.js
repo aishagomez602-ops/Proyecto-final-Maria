@@ -21,6 +21,19 @@ connection.connect((err) => {
   console.log("Conectado a MySQL");
 });
 
+/* cooki
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}));
+
+app.use(session({
+  secret: "mi_secreto",
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false }
+}));*/
+
 // RUTA REGISTRO
 app.post("/registro", (req, res) => {
   const { usuario, contraseña } = req.body;
@@ -60,3 +73,17 @@ app.post("/login", (req, res) => {
 app.listen(3000, () => {
   console.log(" Servidor Express en http://localhost:3000");
 });
+
+
+// CERRAR SESIÓN 
+app.post("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) return res.status(500).json({
+      message: "Error al cerrar sesión"
+    });
+    res.clearCookie("connect.sid");
+    res.json({ success: true, message: "Sesión cerrada correctamente" });
+  });
+});
+app.listen(3000, () => console.log("Servidor corriendo en puerto 3000"));
+

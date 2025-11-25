@@ -55,14 +55,23 @@ export default function Turnos() {
         
          <header className="header">
         <div className="logo">
-          <img src="imag/logoSF.png" alt="Logo Clínica" />
-          
-        <nav className="navbar">
-          <Link to="/inicio"><button>Inicio</button></Link>
-          <Link to="/servicios"><button>Servicios</button></Link>
-          <Link to="/turnos"><button>Turnos</button></Link>
-        </nav>
-        </div>
+      <img src="imag/logoSF.png" alt="Logo Clínica" />
+    </div>
+
+    <nav className="navbar">
+      <Link to="/inicio">
+        <button>Inicio</button>
+      </Link>
+      <Link to="/servicios">
+        <button>Servicios</button>
+      </Link>
+      <Link to="/turnos">
+        <button>Turnos</button>
+      </Link>
+      <Link to="/CerrarSesion">
+        <button>Cerrar Sesión</button>
+      </Link>
+    </nav>
 
       </header>
     
@@ -132,8 +141,8 @@ export default function Turnos() {
             {turnos.map((t) => (
               <li key={t.id}>
                 <strong>{t.nombre}</strong> — {t.especialidad} <br />
-                📅 {t.fecha} ⏰ {t.hora}
-                <button onClick={() => eliminarTurno(t.id)}>🗑️ Eliminar</button>
+                Fecha: {t.fecha} Hora: {t.hora}
+                <button onClick={() => eliminarTurno(t.id)} > Eliminar</button>
               </li>
             ))}
           </ul>

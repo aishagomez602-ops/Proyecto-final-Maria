@@ -1,4 +1,5 @@
 import "./Inicio.css";
+import cerrarSesion from "./CerrarSesion";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -30,9 +31,10 @@ function Inicio() {
       <Link to="/turnos">
         <button>Turnos</button>
       </Link>
-      <Link to="/CerrarSesion">
-        <button>Cerrar Sesión</button>
-      </Link>
+      <p className="texto">
+          
+            <Link to="/login" className="link">Cerrar Sesion</Link>
+          </p>
     </nav>
 
   </header>

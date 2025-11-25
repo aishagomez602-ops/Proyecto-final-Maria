@@ -13,6 +13,7 @@ export default function App() {
       <Routes>
         {/* Páginas de acceso */}
         <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
 
         {/* Páginas del sitio */}

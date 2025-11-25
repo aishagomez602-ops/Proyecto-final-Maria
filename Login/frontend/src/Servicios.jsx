@@ -42,15 +42,24 @@ function Servicios () {
     <div>
        
          <header className="header">
-        <div className="logo">
-          <img src="imag/logoSF.png" alt="Logo Clínica" />
-          
-        <nav className="navbar">
-          <Link to="/inicio"><button>Inicio</button></Link>
-          <Link to="/servicios"><button>Servicios</button></Link>
-          <Link to="/turnos"><button>Turnos</button></Link>
-        </nav>
-        </div>
+       <div className="logo">
+      <img src="imag/logoSF.png" alt="Logo Clínica" />
+    </div>
+
+    <nav className="navbar">
+      <Link to="/inicio">
+        <button>Inicio</button>
+      </Link>
+      <Link to="/servicios">
+        <button>Servicios</button>
+      </Link>
+      <Link to="/turnos">
+        <button>Turnos</button>
+      </Link>
+      <Link to="/CerrarSesion">
+        <button>Cerrar Sesión</button>
+      </Link>
+    </nav>
 
       </header>
 

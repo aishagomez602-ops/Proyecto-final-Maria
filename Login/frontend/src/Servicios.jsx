@@ -56,9 +56,10 @@ function Servicios () {
       <Link to="/turnos">
         <button>Turnos</button>
       </Link>
-      <Link to="/CerrarSesion">
-        <button>Cerrar Sesión</button>
-      </Link>
+      <p className="texto">
+          
+            <Link to="/login" className="link">Cerrar Sesion</Link>
+          </p>
     </nav>
 
       </header>

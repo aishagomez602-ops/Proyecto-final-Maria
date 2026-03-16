@@ -14,42 +14,38 @@ function Inicio() {
   }, []);
 
   return (
- <div>
-  <header className="header">
+    <div>
+      <header className="header">
 
-    <div className="logo">
-      <img src="imag/logoSF.png" alt="Logo Clínica" />
-    </div>
+        <div className="logo">
+          <img src="imag/logoSF.png" alt="Logo Clínica" />
+        </div>
 
-    <nav className="navbar">
-      <Link to="/inicio">
-        <button>Inicio</button>
-      </Link>
-      <Link to="/servicios">
-        <button>Servicios</button>
-      </Link>
-      <Link to="/turnos">
-        <button>Turnos</button>
-      </Link>
-      <p className="texto">
-          
+        <nav className="navbar">
+          <Link to="/inicio">
+            <button>Inicio</button>
+          </Link>
+          <Link to="/servicios">
+            <button>Servicios</button>
+          </Link>
+          <Link to="/turnos">
+            <button>Turnos</button>
+          </Link>
+          <p className="texto">
             <Link to="/login" className="link">Cerrar Sesion</Link>
           </p>
-    </nav>
-
-  </header>
-
+        </nav>
+      </header>
 
       {/* Contenido principal */}
       <main className="contenido">
         <h1 className="titulo-bienvenida">
-          Bienvenido {usuario && <span>{usuario}</span>}
+          Bienvenido
         </h1>
         <img
           src="imag/clinica.png"
           alt="Sanatorio del Norte"
-          className="imagen-sanatorio"
-        />
+          className="imagen-sanatorio" />
         <p className="descripcion">
           Brindamos atención médica de excelencia, tecnología de vanguardia y un equipo
           profesional comprometido con tu bienestar.
@@ -57,6 +53,15 @@ function Inicio() {
         <br />
         <br />
       </main>
+
+      <div className="equipo">
+        <h1>Nuestro equipo</h1>
+        <section className="equipoImg">
+          <img src="imag/doctor1.png" alt="" />
+          <img src="imag/doctor2.png" alt="" />
+          <img src="imag/doctor3.png" alt="" />
+        </section>
+      </div>
 
       {/* Footer */}
       <footer className="footer">

@@ -83,6 +83,30 @@ body {
   gap: 10px;
 }
 
+.equipoImg {
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+  align-items: center;  
+}
+
+.equipoImg img {
+  height: 400px;
+  width: 270px;
+  border-radius: 10px;
+}
+
+.equipo {
+  background-color: #5394d9;
+  padding: 50px;
+  margin-bottom: 75px;
+}
+
+.equipo h1 {
+  color: aliceblue;
+  text-align: center;
+}
+
 ------------------------------------------------------FOOTER----------------------------------------------------------------------------
 
 .footer {
@@ -113,6 +137,7 @@ body {
 
 .footer-section p {
   margin: 0;
+  color: white;
 }
 
 .footer-section ul {

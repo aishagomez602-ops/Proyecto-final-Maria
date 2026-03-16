@@ -142,7 +142,7 @@ export default function Turnos() {
             {turnos.map((t) => (
               <li key={t.id}>
                 <strong>{t.nombre}</strong> — {t.especialidad} <br />
-                Fecha: {t.fecha} Hora: {t.hora}
+                <strong>Fecha:</strong> {t.fecha} <strong>Hora: </strong> {t.hora}
                 <button onClick={() => eliminarTurno(t.id)} > Eliminar</button>
               </li>
             ))}

@@ -98,17 +98,17 @@ body {
 }
 
 .equipo {
-  background-color: #5394d9;
+  background-color: #5394d974;
   padding: 50px;
   margin-bottom: 75px;
 }
 
 .equipo h1 {
-  color: aliceblue;
+   color: #4a708b;;
   text-align: center;
 }
 figure p{
- color: #ffffff;
+  color: #4a708b;;
  text-align: center;
  font-weight: bolder;
  font-size: large;

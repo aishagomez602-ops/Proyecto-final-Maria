@@ -85,7 +85,7 @@ body {
 
 .equipoImg {
   display: flex;
-  gap: 150px;
+  gap: 50px;
   justify-content: center;
   align-items: center;  
 }
@@ -93,7 +93,8 @@ body {
 .equipoImg img {
   height: 400px;
   width: 270px;
-  border-radius: 10px;
+  border-radius: 40px;
+  padding: 30px;
 }
 
 .equipo {
@@ -105,6 +106,12 @@ body {
 .equipo h1 {
   color: aliceblue;
   text-align: center;
+}
+figure p{
+ color: #ffffff;
+ text-align: center;
+ font-weight: bolder;
+ font-size: large;
 }
 
 ------------------------------------------------------FOOTER----------------------------------------------------------------------------

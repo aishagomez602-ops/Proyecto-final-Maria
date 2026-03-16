@@ -57,9 +57,46 @@ function Inicio() {
       <div className="equipo">
         <h1>Nuestro equipo</h1>
         <section className="equipoImg">
-          <img src="imag/doctor1.png" alt="" />
-          <img src="imag/doctor2.png" alt="" />
-          <img src="imag/doctor3.png" alt="" />
+          <figure>
+          <img src="imag/doctor1.png" alt="Doctor" />
+          <p>Dr.Sebastián Alcázar</p>
+          </figure>
+          <figure>
+          <img src="imag/doctor2.png" alt="Doctora" />
+          <p>Dra.Isabella Montenegro</p>
+          </figure>
+          <figure>
+          <img src="imag/doctor3.png" alt="Doctor" />
+          <p>Dr.Santiago Valdés</p>
+          </figure>
+        </section>
+          <section className="equipoImg">
+          <figure>
+          <img src="imag/doctor5.jpeg" alt="Doctor" />
+          <p>Dra.Melina Delgado</p>
+          </figure>
+          <figure>
+          <img src="imag/doctor6.png" alt="Doctora" />
+          <p>Dr.Alejandro Montiel</p>
+          </figure>
+          <figure>
+          <img src="imag/doctor7.png" alt="Doctor" />
+          <p>Dra.Catalina Beaumont</p>
+          </figure>
+          </section>
+        <section className="equipoImg">
+          <figure>
+          <img src="imag/doctor8.jpeg" alt="Doctor" />
+          <p>Dr.Eduardo Villanueva</p>
+          </figure>
+          <figure>
+          <img src="imag/doctor9.jpeg" alt="Doctora" />
+          <p>Dra.Victoria Salvatierra</p>
+          </figure>
+          <figure>
+          <img src="imag/doctor10.jpeg" alt="Doctor" />
+          <p>Dra.Valeria Montserrat</p>
+          </figure>
         </section>
       </div>
 

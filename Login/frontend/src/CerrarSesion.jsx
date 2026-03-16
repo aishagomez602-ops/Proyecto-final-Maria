@@ -17,8 +17,4 @@ export default function CerrarSesion() {
       alert("Error al cerrar sesión");
     }
   };
-
- 
 }
-
-
